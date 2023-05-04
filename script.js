@@ -37,3 +37,29 @@ computerSelection = computerSelecting().toLocaleLowerCase();
         return "lost"
     }
   }
+function game(){
+    let playerScore = 0;
+    let computerScore = 0;
+    let round = 0;
+    while(round < 5){
+    let playerChoice = playRound()
+        if (playerChoice==="win"){
+            playerScore = playerScore + 1
+            console.log(`You win!`)
+            console.log(`The score is ${playerScore} - ${computerScore}`)
+            round = round + 1
+        }
+        else if(playerChoice === "lost"){
+            computerScore = computerScore + 1
+            console.log(`You lost!`)
+            console.log(`The score is ${playerScore} - ${computerScore}`)
+            round = round + 1
+        }
+        else{
+            console.log("It's a tie!")
+            console.log(`The score is ${playerScore} - ${computerScore}`)
+            round = round + 1
+        }
+    }
+    (playerScore > computerScore) ? console.log(`Congratulations, you have won the game!`) : playerScore < computerScore ? console.log(`You have lost the game!`) : console.log("It's a draw!")
+}
